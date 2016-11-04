@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class Solution {
 
-	private static int[] array = null;
-
 	public static void main(String[] args) {
 		try (Scanner in = new Scanner(System.in)) {
 			int n = in.nextInt();
