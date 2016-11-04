@@ -9,7 +9,6 @@ public class Solution {
 			int number = in.nextInt();
 			String numberString = Integer.toString(number);
 			int numberStringLength = numberString.length();
-			int[] digits = new int[numberStringLength];
 			int count = 0;
 			for (int j = 0; j < numberStringLength; j++) {
 				int digit = Character.getNumericValue(numberString.charAt(j));
