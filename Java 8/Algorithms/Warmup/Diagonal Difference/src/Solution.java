@@ -3,17 +3,18 @@ import java.util.Scanner;
 public class Solution {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int size = Integer.parseInt(scanner.nextLine());
-		int[][] data = new int[size][size];
-		for (int i = 0; i < size; i++) {
-			data[i] = getData(scanner.nextLine().split(" "));
+		try (Scanner scanner = new Scanner(System.in)) {
+			int size = Integer.parseInt(scanner.nextLine());
+			int[][] data = new int[size][size];
+			for (int i = 0; i < size; i++) {
+				data[i] = getData(scanner.nextLine().split(" "));
+			}
+
+			int d1 = getDiagonalSum(getDiagonal1(data));
+			int d2 = getDiagonalSum(getDiagonal2(data));
+
+			System.out.println(Math.abs(d1 - d2));
 		}
-
-		int d1 = getDiagonalSum(getDiagonal1(data));
-		int d2 = getDiagonalSum(getDiagonal2(data));
-
-		System.out.println(Math.abs(d1 - d2));
 	}
 
 	private static int getDiagonalSum(int[] diagonal) {
