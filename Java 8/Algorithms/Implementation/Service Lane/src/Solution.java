@@ -13,7 +13,6 @@ public class Solution {
 		for (int i = 0; i < T; i++) {
 			int entry = in.nextInt();
 			int exit = in.nextInt();
-			int length = exit - entry;
 			int min = 3;
 			for (int j = entry; j <= exit; j++) {
 				min = (width[j] < min) ? width[j] : min;
