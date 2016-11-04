@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class Solution {
 
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		Integer[] sticks = new Integer[in.nextInt()];
-		for (int i = 0; i < sticks.length; i++) {
-			sticks[i] = in.nextInt();
-		}
-		while (sticks.length > 0) {
-			System.out.println(sticks.length);
-			sticks = getCutSticks(sticks);
+		try (Scanner in = new Scanner(System.in)) {
+			Integer[] sticks = new Integer[in.nextInt()];
+			for (int i = 0; i < sticks.length; i++) {
+				sticks[i] = in.nextInt();
+			}
+			while (sticks.length > 0) {
+				System.out.println(sticks.length);
+				sticks = getCutSticks(sticks);
+			}
 		}
 	}
 
