@@ -3,9 +3,9 @@ Node InsertNth(Node head, int data, int position) {
         head = new Node();
         head.data = data;
     } else {
+        Node newNode = new Node();
+        newNode.data = data;
         if (position == 0) {
-            Node newNode = new Node();
-            newNode.data = data;
             newNode.next = head;
             return newNode;
         } else {
@@ -14,8 +14,6 @@ Node InsertNth(Node head, int data, int position) {
                 node = node.next;
             }
             Node newNextNode = node.next;
-            Node newNode = new Node();
-            newNode.data = data;
             newNode.next = newNextNode;
             node.next = newNode;
         }
