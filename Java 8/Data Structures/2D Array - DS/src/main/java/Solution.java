@@ -22,9 +22,9 @@ public class Solution {
 				}
 			}
 			int maxSum = 0;
-			for (int y = 1; y < 4; y++) {
-				for (int x = 1; x < 4; x++) {
-					int newSum = sumHourGlass(A, x, y);
+			for (int y = 1; y < 5; y++) {
+				for (int x = 1; x < 5; x++) {
+					int newSum = sumHourGlass(A, y, x);
 					maxSum = (newSum > maxSum) ? newSum : maxSum;
 				}
 			}
@@ -32,10 +32,10 @@ public class Solution {
 		}
 	}
 
-	private static int sumHourGlass(int[][] A, int x, int y) {
+	private static int sumHourGlass(int[][] A, int y, int x) {
 		return //
-		A[x - 1][y - 1] + A[x][y - 1] + A[x + 1][y - 1] + //
-				A[x][y] +//
-				A[x - 1][y + 1] + A[x][y + 1] + A[x + 1][y + 1];
+		A[y - 1][x - 1] + A[y - 1][x] + A[y - 1][x + 1] + //
+				A[y][x] +//
+				A[y + 1][x - 1] + A[y + 1][x] + A[y + 1][x + 1];
 	}
 }
