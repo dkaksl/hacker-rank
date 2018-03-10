@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 /** 
  * 
@@ -14,28 +16,19 @@ import java.util.Scanner;
  */
 public class Solution {
 	public static void main(String[] args) {
-		long min = 1000000000;
-		long max = 0;
-
 		try (Scanner in = new Scanner(System.in)) {
 			int[] numbers = new int[5];
 			for (int i = 0; i < 5; i++) {
 				numbers[i] = in.nextInt();
 			}
+			Arrays.sort(numbers);
+			int[] minArray = Arrays.copyOfRange(numbers, 0, 4);
+			int[] maxArray = Arrays.copyOfRange(numbers, 1, 5);
 
-			for (int i = 0; i < numbers.length; i++) {
-				long sum = 0;
-				for (int j = 0; j < numbers.length; j++) {
-					if (i == j) {
-						continue;
-					}
-					sum += numbers[j];
-				}
-				min = (sum < min) ? sum : min;
-				max = (sum > max) ? sum : max;
-			}
+			long min = IntStream.of(minArray).sum();
+			long max = IntStream.of(maxArray).sum();
+
+			System.out.println(min + " " + max);
 		}
-
-		System.out.println(min + " " + max);
 	}
 }
