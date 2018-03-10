@@ -23,6 +23,7 @@ public class Solution {
 				int height = in.nextInt();
 				if (height > maxHeight) {
 					count = 1;
+					maxHeight = height;
 				} else if (height == maxHeight) {
 					count++;
 				} else {
