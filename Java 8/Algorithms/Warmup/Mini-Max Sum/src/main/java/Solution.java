@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 /** 
  * 
@@ -25,8 +24,13 @@ public class Solution {
 			int[] minArray = Arrays.copyOfRange(numbers, 0, 4);
 			int[] maxArray = Arrays.copyOfRange(numbers, 1, 5);
 
-			long min = IntStream.of(minArray).sum();
-			long max = IntStream.of(maxArray).sum();
+			long min = 0;
+			long max = 0;
+
+			for (int i = 0; i < 4; i++) {
+				min += minArray[i];
+				max += maxArray[i];
+			}
 
 			System.out.println(min + " " + max);
 		}
