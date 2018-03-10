@@ -21,7 +21,7 @@ public class Solution {
 					A[y][x] = in.nextInt();
 				}
 			}
-			int maxSum = 0;
+			int maxSum = sumHourGlass(A, 1, 1);
 			for (int y = 1; y < 5; y++) {
 				for (int x = 1; x < 5; x++) {
 					int newSum = sumHourGlass(A, y, x);
